@@ -6,12 +6,24 @@
       xmlns:local="clr-namespace:PrintHouse.pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="MainPageOf">
+      Title="MainPageOf" Background="Aqua">
 
     <Grid>
-        <TextBlock Margin="557,18,-487,-4">Название услуги</TextBlock>
-        <TextBlock>Изображение услуги</TextBlock>
-        <TextBlock Margin="291,45,291,383">Описание услуги</TextBlock>
-        <Button Margin="594,342,10,10">Заказать</Button>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel>
+            <TextBlock>Название услуги</TextBlock>
+            <TextBlock>Изображение услуги</TextBlock>
+            <TextBlock>Описание услуги</TextBlock>
+        </StackPanel>
+        
+        <Button Grid.Column="1">Заказать</Button>
     </Grid>
 </Page>

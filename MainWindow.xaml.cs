@@ -14,7 +14,7 @@ namespace PrintHouse
         public MainWindow()
         {
             InitializeComponent();
-            InitDB();
+            //InitDB();
             PageProvider.Init(frame);
         }
         private void InitDB()
@@ -31,6 +31,11 @@ namespace PrintHouse
         {
             //frame.NavigationService.Navigate(new Uri("./pages/LoginPage.xaml", UriKind.Relative));
             PageProvider.SetPageToFrame("LoginPage");
+        }
+
+        private void ButtonShopingCart_Click(object sender, RoutedEventArgs e)
+        {
+            PageProvider.SetPageToFrame("CreateOrder");
         }
     }
 }

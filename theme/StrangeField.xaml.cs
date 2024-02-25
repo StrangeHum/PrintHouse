@@ -13,24 +13,23 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PrintHouse.pages
+namespace PrintHouse.theme
 {
     /// <summary>
-    /// Логика взаимодействия для LoginPage.xaml
+    /// Логика взаимодействия для StrangeField.xaml
     /// </summary>
-    public partial class LoginPage : Page
+    public partial class StrangeField : UserControl
     {
-        public LoginPage()
+        public StrangeField()
         {
             InitializeComponent();
         }
+        public static readonly DependencyProperty TitleDepensity = DependencyProperty.Register("Title", typeof(string), typeof(StrangeField), new PropertyMetadata(String.Empty));
 
-        private void ButtonLogin_Click(object sender, RoutedEventArgs e)
+        public string Title
         {
-            //Todo: Вход
-            MessageBox.Show($"Login: {Login.Field.Text}\nPassword: {Password.Field.Password}");
-
-            //Todo: Переход на страницу услуг
+            get { return (string)GetValue(TitleDepensity); }
+            set { SetValue(TitleDepensity, value); }
         }
     }
 }

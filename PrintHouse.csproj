@@ -83,6 +83,18 @@
     </ApplicationDefinition>
     <Compile Include="src\PageProvider.cs" />
     <Compile Include="src\StrangeDB.cs" />
+    <Compile Include="theme\LoginField.xaml.cs">
+      <DependentUpon>LoginField.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="theme\PasswordField.xaml.cs">
+      <DependentUpon>PasswordField.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="theme\StrangeField.xaml.cs">
+      <DependentUpon>StrangeField.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="theme\UserControl1.xaml.cs">
+      <DependentUpon>UserControl1.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -112,6 +124,26 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="pages\SignupPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="theme\Dictionary1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="theme\LoginField.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="theme\PasswordField.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="theme\StrangeField.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="theme\UserControl1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

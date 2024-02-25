@@ -13,24 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PrintHouse.pages
+namespace PrintHouse.theme
 {
     /// <summary>
-    /// Логика взаимодействия для LoginPage.xaml
+    /// Логика взаимодействия для PasswordField.xaml
     /// </summary>
-    public partial class LoginPage : Page
+    public partial class PasswordField : UserControl
     {
-        public LoginPage()
+        public PasswordField()
         {
             InitializeComponent();
-        }
-
-        private void ButtonLogin_Click(object sender, RoutedEventArgs e)
-        {
-            //Todo: Вход
-            MessageBox.Show($"Login: {Login.Field.Text}\nPassword: {Password.Field.Password}");
-
-            //Todo: Переход на страницу услуг
         }
     }
 }

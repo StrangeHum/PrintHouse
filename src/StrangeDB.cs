@@ -29,7 +29,7 @@ namespace PrintHouse.src
             server = "localhost";
             database = "printinghouse";
             uid = "root";
-            password = "root"; //StrangeHoney
+            password = "StrangeHoney"; //StrangeHoney
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";

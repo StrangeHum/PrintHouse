@@ -24,5 +24,12 @@ namespace PrintHouse.pages
         {
             InitializeComponent();
         }
+
+        private void ButtonRegister_Click(object sender, RoutedEventArgs e)
+        {
+            //Todo: Регистрация
+
+            //Todo: Переход на страницу входа
+        }
     }
 }

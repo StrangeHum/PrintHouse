@@ -4,11 +4,67 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PrintHouse.pages"
+      xmlns:UC="clr-namespace:PrintHouse.theme"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ServicePage">
 
-    <Grid>
+    <Grid Background="Aqua" Style="{StaticResource SHStyleForForms}">
+        <Grid.ColumnDefinitions>
+            <!--LeftSide с фильтрами и тд-->
+            <ColumnDefinition Width="200"/>
+            <!--RightSide с контентом-->
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <!--LeftSide-->
+        <Border CornerRadius="30" Margin="5 5 0 5" Background="LightGray"/>
+        <StackPanel HorizontalAlignment="Center" Margin="5">
+            <Label>Фильтры</Label>
+        </StackPanel>
         
+        <!--RightSide-->
+        <Grid Grid.Column="1" Margin="10 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+                <!--<RowDefinition Height="50"/>-->
+            </Grid.RowDefinitions>
+
+            <!--Поисковик-->
+            <Border CornerRadius="20" Margin="5" Background="LightGray">
+                <TextBox Background="Transparent" Text="Поиск" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBox>
+            </Border>
+
+            <!--Найденные услуги-->
+            <Border Grid.Row="1" CornerRadius="30" Margin="5" Background="LightGray"/>
+            <Grid Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.ColumnSpan="6">Найденные услуги(Возможно останется только вертикальный список)</Label>
+            </Grid>
+            <ListBox Grid.Row="2" Margin="10" Background="Transparent" d:ItemsSource="{d:SampleData ItemCount=5}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Label>Foo</Label>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            
+            
+            <!--<Border Grid.Row="2" CornerRadius="20" Margin="5" Background="LightGray"/>
+            <Grid Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="Назад" Margin="10"/>
+                    <Button Content="Вперёд" Margin="10"/>
+                </StackPanel>
+            </Grid>-->
+        </Grid>
     </Grid>
 </Page>

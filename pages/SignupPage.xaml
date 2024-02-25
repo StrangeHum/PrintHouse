@@ -4,11 +4,29 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PrintHouse.pages"
+      xmlns:UC="clr-namespace:PrintHouse.theme"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="SignupPage">
 
-    <Grid>
-        
+    <Grid Background="Aqua" Style="{StaticResource SHStyleForForms}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="1" VerticalAlignment="Center" Style="{StaticResource Foo}">
+            <UC:LoginField x:Name="Login"/>
+            <UC:PasswordField x:Name="Password"/>
+            
+            <Label></Label>
+            
+            <UC:StrangeField x:Name="FirstName" Title="Имя"/>
+            <UC:StrangeField x:Name="SecondName" Title="Фамилия"/>
+            <UC:StrangeField x:Name="MiddleName" Title="Отчество"/>
+            
+            <Button x:Name="ButtonRegister" Content="Зарегестрироваться" Click="ButtonRegister_Click"></Button>
+        </StackPanel>
     </Grid>
 </Page>

@@ -13,24 +13,23 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PrintHouse.pages
+namespace PrintHouse.theme
 {
     /// <summary>
-    /// Логика взаимодействия для LoginPage.xaml
+    /// Логика взаимодействия для UserControl1.xaml
     /// </summary>
-    public partial class LoginPage : Page
+    public partial class UserControl1 : UserControl
     {
-        public LoginPage()
+        public UserControl1()
         {
             InitializeComponent();
         }
+        public static readonly DependencyProperty TitleDepensity = DependencyProperty.Register("Title", typeof(string), typeof(UserControl1), new PropertyMetadata(String.Empty));
 
-        private void ButtonLogin_Click(object sender, RoutedEventArgs e)
+        public string Title
         {
-            //Todo: Вход
-            MessageBox.Show($"Login: {Login.Field.Text}\nPassword: {Password.Field.Password}");
-
-            //Todo: Переход на страницу услуг
+            get { return (string)GetValue(TitleDepensity); }
+            set { SetValue(TitleDepensity, value); }
         }
     }
 }
