@@ -16,13 +16,17 @@ namespace PrintHouse
             InitializeComponent();
             //InitDB();
             PageProvider.Init(frame);
+            PageProvider.SetPageToFrame("ServicePage");
+
         }
+
+
         private void InitDB()
         {
             var data = db.Select();
             if (data.Read())
             {
-                LabelFoo.Content = $"{data[0]}, {data[1]}, {data[2]}, {data[3]}";
+                //LabelFoo.Content = $"{data[0]}, {data[1]}, {data[2]}, {data[3]}";
                 data.DisposeAsync();
             }
         }
@@ -35,7 +39,22 @@ namespace PrintHouse
 
         private void ButtonShopingCart_Click(object sender, RoutedEventArgs e)
         {
-            PageProvider.SetPageToFrame("CreateOrder");
+            PageProvider.SetPageToFrame("ShopingCartPage");
+        }
+
+        private void ButtonCabinet_Click(object sender, RoutedEventArgs e)
+        {
+            PageProvider.SetPageToFrame("CabinetPage");
+        }
+
+        private void ButtonSignup_Click(object sender, RoutedEventArgs e)
+        {
+            PageProvider.SetPageToFrame("SignupPage");
+        }
+
+        private void ButtonToMainPage_Click(object sender, RoutedEventArgs e)
+        {
+            PageProvider.SetPageToFrame("ServicePage");
         }
     }
 }

@@ -12,31 +12,44 @@
         AllowsTransparency="True"
         Background="Transparent"-->
     
-    <Border Background="Coral" CornerRadius="30">
+    <Border Background="Coral">
         <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200"/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="75"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
+            
+            <Frame NavigationUIVisibility="Hidden" Margin="40 10" x:Name="frame" Grid.Row="1"></Frame>
 
-            <Frame NavigationUIVisibility="Hidden" x:Name="frame" Grid.Column="1" Grid.Row="1"></Frame>
-
-            <Grid Grid.Column="2">
+            <Grid>
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="160"/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button Content="Корзина" Margin="10" x:Name="ButtonShopingCart" Grid.Column="0" Click="ButtonShopingCart_Click"></Button>
-                <Button Content="Вход" Margin="10" x:Name="ButtonLogin" Grid.Column="1" Click="ButtonLogin_Click"></Button>
-            </Grid>
 
-            <Label x:Name="LabelFoo" Content="FOO" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
-            
+                <Border CornerRadius="20" Margin="7" Background="Orange">
+                    <Button x:Name="ButtonToMainPage" Content="Главное меню"  Background="Transparent" Click="ButtonToMainPage_Click">
+
+                    </Button>
+                </Border>
+                
+                
+                <!--Типо кнопки-->
+                <Grid Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button Content="Корзина" x:Name="ButtonShopingCart" Grid.Column="0" Click="ButtonShopingCart_Click"></Button>
+                    <Button Content="Вход" x:Name="ButtonLogin" Grid.Column="1" Click="ButtonLogin_Click"></Button>
+                    <Button Content="Личный кабинет" x:Name="ButtonCabinet" Grid.Column="2" Click="ButtonCabinet_Click"></Button>
+                    <Button Content="Регистрация" x:Name="ButtonSignup" Grid.Column="3" Click="ButtonSignup_Click"></Button>
+
+                </Grid>
+            </Grid>
         </Grid>
     </Border>
 </Window>

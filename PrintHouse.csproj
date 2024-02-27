@@ -81,7 +81,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="pages\CabinetPage.xaml.cs">
+      <DependentUpon>CabinetPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\ShopingCartPage.xaml.cs">
+      <DependentUpon>ShopingCartPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="src\PageProvider.cs" />
+    <Compile Include="src\ServiceData.cs" />
     <Compile Include="src\StrangeDB.cs" />
     <Compile Include="theme\LoginField.xaml.cs">
       <DependentUpon>LoginField.xaml</DependentUpon>
@@ -107,6 +114,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="pages\CabinetPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="pages\CreateOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -120,6 +131,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="pages\ServicePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\ShopingCartPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

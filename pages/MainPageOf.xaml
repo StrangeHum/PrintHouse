@@ -18,12 +18,14 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <StackPanel>
+        <StackPanel Grid.Row="1">
             <TextBlock>Название услуги</TextBlock>
             <TextBlock>Изображение услуги</TextBlock>
             <TextBlock>Описание услуги</TextBlock>
         </StackPanel>
+
+        <Label>Страница информации об услуге</Label>
         
-        <Button Grid.Column="1">Заказать</Button>
+        <Button x:Name="ButtonAddToCart" Grid.Column="1" Grid.Row="1">Заказать</Button>
     </Grid>
 </Page>
