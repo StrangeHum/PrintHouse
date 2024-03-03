@@ -10,12 +10,14 @@ namespace PrintHouse
     /// </summary>
     public partial class MainWindow : Window
     {
-        StrangeDB db = new StrangeDB();
+        StrangeDB db;
         public MainWindow()
         {
+            db = new StrangeDB();
             InitializeComponent();
             //InitDB();
             PageProvider.Init(frame);
+            ShopingCart.Init();
             PageProvider.SetPageToFrame("ServicePage");
 
         }

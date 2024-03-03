@@ -26,10 +26,10 @@ namespace PrintHouse.src
         /// </summary>
         private void Initialize()
         {
-            server = "localhost";
+            server = "127.0.0.1";
             database = "printinghouse";
             uid = "root";
-            password = "StrangeHoney"; //StrangeHoney
+            password = "root"; //StrangeHoney
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
@@ -123,7 +123,7 @@ namespace PrintHouse.src
                 switch (ex.Number)
                 {
                     case 0:
-                        MessageBox.Show("Cannot connect to server.  Contact administrator");
+                        MessageBox.Show("Cannot connect to server. Contact administrator");
                         break;
 
                     case 1045:

@@ -12,27 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using PrintHouse.src;
 
 namespace PrintHouse.pages
 {
     /// <summary>
-    /// Логика взаимодействия для ShopingCartPage.xaml
+    /// Логика взаимодействия для MenuSearchServicesPage.xaml
     /// </summary>
-    public partial class ShopingCartPage : Page
+    public partial class MenuSearchServicesPage : Page
     {
-        public ShopingCartPage()
+        public MenuSearchServicesPage()
         {
             InitializeComponent();
-            ServiceList.ItemsSource = ShopingCart.serviceList;
         }
-
-        private void RemoveItemOnCart_Click(object sender, RoutedEventArgs e)
-        {
-            ServiceCart item = (ServiceCart)ServiceList.SelectedItem;
-            MessageBox.Show(item.Price.ToString());
-            //ShopingCart.serviceList.Remove(item);
-        }
-
     }
 }

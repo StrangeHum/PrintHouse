@@ -30,7 +30,8 @@ namespace PrintHouse.pages
             //Todo: Вход
             MessageBox.Show($"Login: {Login.Field.Text}\nPassword: {Password.Field.Password}");
 
-            //Todo: Переход на страницу услуг
+            //Todo: Перенести функционал ServicePage в menuSearchServicesPage
+            PageProvider.SetPageToFrame("ServicePage");
         }
     }
 }

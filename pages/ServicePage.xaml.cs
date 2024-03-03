@@ -42,7 +42,7 @@ namespace PrintHouse.pages
         {
             ServiceDatas.Clear();
 
-            var data = db.Select("select title, description from service;");
+            var data = db.Select("select s.title, s.description, sp.price from service as s join serviceprice sp on s.id = sp.idServicePrice;");
 
             while (data.Read())
             {
@@ -50,7 +50,7 @@ namespace PrintHouse.pages
                 {
                     title = (string)data[0],
                     description = (string)data[1],
-                    price = 0, //(float)data[2]
+                    price = (float)data[2]
                 });
             }
             data.DisposeAsync();
@@ -77,13 +77,13 @@ namespace PrintHouse.pages
 
         private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            //Todo: поиск услуг
             SelectServicesWithTitle(SearchBox.Text);
         }
 
         private void CreateOrderButton_Click(object sender, RoutedEventArgs e)
         {
-            var index = ServiceList.SelectedIndex;
+            int index = ServiceList.SelectedIndex;
+            ServiceData item = (ServiceData)ServiceList.SelectedItem;
 
             if(index == -1)
             {
@@ -92,12 +92,14 @@ namespace PrintHouse.pages
             }
 
             //todo: Добавление услуги в заказ
-            MessageBox.Show($"{index}");
+            //MessageBox.Show($"{index}");
+
+            ShopingCart.serviceList.Add(new ServiceCart(item, 1));
         }
 
         private void SearchBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            if (!Char.IsLetterOrDigit(e.Text, 0)) 
+            if (!Char.IsLetterOrDigit(e.Text, 0))
                 e.Handled = true;
         }
 

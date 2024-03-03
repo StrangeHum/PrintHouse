@@ -50,7 +50,6 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.ColumnSpan="6">Найденные услуги(Возможно останется только вертикальный список)</Label>
             </Grid>
             <ListView x:Name="ServiceList" Grid.Row="1" Margin="10" Background="Transparent" SelectionMode="Single" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                 <ListView.ItemTemplate>
