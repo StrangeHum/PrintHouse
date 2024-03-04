@@ -42,7 +42,7 @@ namespace PrintHouse.pages
         {
             ServiceDatas.Clear();
 
-            var data = db.Select("select s.title, s.description, sp.price from service as s join serviceprice sp on s.id = sp.idServicePrice;");
+            var data = db.Select($"select s.title, s.description, sp.price, s.id from service as s join serviceprice sp on s.id = sp.idServicePrice;");
 
             while (data.Read())
             {
@@ -50,16 +50,16 @@ namespace PrintHouse.pages
                 {
                     title = (string)data[0],
                     description = (string)data[1],
-                    price = (float)data[2]
+                    price = (float)data[2],
+                    Id = (int)data[3]
                 });
             }
             data.DisposeAsync();
         }
-
         public void SelectServicesWithTitle(string searchText)
         {
-            ServiceDatas.Clear(); //%'` or title like `'
-            var data = db.Select($"select title, description from service where title like '%{searchText}%' or description like '%{searchText}%';");
+            ServiceDatas.Clear();
+            var data = db.Select($"select s.title, s.description, sp.price, s.id from service as s join serviceprice sp on s.id = sp.idServicePrice where s.title like '%{searchText}%' or description like '%{searchText}%';");
 
             while (data.Read())
             {
@@ -67,7 +67,8 @@ namespace PrintHouse.pages
                 {
                     title = (string)data[0],
                     description = (string)data[1],
-                    price = 0, //(float)data[2]
+                    price = (float)data[2],
+                    Id = (int)data[3]
                 });
             }
             data.DisposeAsync();
@@ -91,9 +92,6 @@ namespace PrintHouse.pages
                 return;
             }
 
-            //todo: Добавление услуги в заказ
-            //MessageBox.Show($"{index}");
-
             ShopingCart.serviceList.Add(new ServiceCart(item, 1));
         }
 
@@ -102,8 +100,5 @@ namespace PrintHouse.pages
             if (!Char.IsLetterOrDigit(e.Text, 0))
                 e.Handled = true;
         }
-
-        //Todo: Фильтрация
-        //https://www.youtube.com/watch?v=blOl-Kg2NHM
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PrintHouse.src;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,9 +28,8 @@ namespace PrintHouse.pages
 
         private void ButtonRegister_Click(object sender, RoutedEventArgs e)
         {
-            //Todo: Регистрация
-
-            //Todo: Переход на страницу входа
+            AuthProvider.TrySignup(Login.Field.Text, Password.Field.Password, FirstName.Field.Text, SecondName.Field.Text, MiddleName.Field.Text);
+            PageProvider.SetPageToFrame("LoginPage");
         }
     }
 }

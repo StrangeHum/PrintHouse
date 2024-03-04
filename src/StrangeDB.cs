@@ -29,7 +29,7 @@ namespace PrintHouse.src
             server = "127.0.0.1";
             database = "printinghouse";
             uid = "root";
-            password = "root"; //StrangeHoney
+            password = "StrangeHoney"; //StrangeHoney
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
@@ -55,14 +55,12 @@ namespace PrintHouse.src
         /// <summary>
         /// Добаляет данные в таблицу
         /// </summary>
-        public void Insert()
+        public void Insert(string query)
         {
-            if (this.TryOpenConnection() != true)
+            if (connection.State != System.Data.ConnectionState.Open)
             {
-                return;
+                throw new Exception("Нет подключения");
             }
-
-            string query = "INSERT INTO tableinfo (name, age) VALUES('John Smith', '33')";
             //create command and assign the query and connection from the constructor
             MySqlCommand cmd = new MySqlCommand(query, connection);
 

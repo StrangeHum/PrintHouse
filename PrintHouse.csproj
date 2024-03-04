@@ -84,13 +84,12 @@
     <Compile Include="pages\CabinetPage.xaml.cs">
       <DependentUpon>CabinetPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="pages\MenuSearchServicesPage.xaml.cs">
-      <DependentUpon>MenuSearchServicesPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="pages\ShopingCartPage.xaml.cs">
       <DependentUpon>ShopingCartPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="src\AuthProvider.cs" />
     <Compile Include="src\PageProvider.cs" />
+    <Compile Include="src\PersonalData.cs" />
     <Compile Include="src\ServiceData.cs" />
     <Compile Include="src\ShopingCart.cs" />
     <Compile Include="src\StrangeDB.cs" />
@@ -127,14 +126,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="pages\LoginPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="pages\MainPageOf.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="pages\MenuSearchServicesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -177,9 +168,6 @@
     </Compile>
     <Compile Include="pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="pages\MainPageOf.xaml.cs">
-      <DependentUpon>MainPageOf.xaml</DependentUpon>
     </Compile>
     <Compile Include="pages\ServicePage.xaml.cs">
       <DependentUpon>ServicePage.xaml</DependentUpon>

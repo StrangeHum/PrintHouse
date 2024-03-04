@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PrintHouse.src;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,11 +28,11 @@ namespace PrintHouse.pages
 
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
-            //Todo: Вход
-            MessageBox.Show($"Login: {Login.Field.Text}\nPassword: {Password.Field.Password}");
-
-            //Todo: Перенести функционал ServicePage в menuSearchServicesPage
-            PageProvider.SetPageToFrame("ServicePage");
+            if (AuthProvider.TryAuth(Login.Field.Text, Password.Field.Password))
+            {
+                PageProvider.SetPageToFrame("CabinetPage");
+            }
+            
         }
     }
 }

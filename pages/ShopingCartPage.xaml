@@ -13,7 +13,6 @@
             <RowDefinition/>
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
-        <Label>ShopingCart</Label>
         <ListView x:Name="ServiceList" Margin="10" Background="Transparent" SelectionMode="Single" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -35,6 +34,7 @@
         </ListView>
         <StackPanel Orientation="Horizontal" Grid.Row="1">
             <Button x:Name="RemoveItemOnCart" Width="100" Content="Удалить" Click="RemoveItemOnCart_Click"></Button>
+            <Button x:Name="CreateOrder" Width="100" Content="Заказать" Click="CreateOrder_Click"></Button>
         </StackPanel>
     </Grid>
 </Page>

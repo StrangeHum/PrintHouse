@@ -11,6 +11,7 @@ namespace PrintHouse.src
         public string title { get; set; }
         public string description { get; set; }
         public float price { get; set; }
+        public int Id {  get; set; }
         //public Material[] materials { get; set; }
     }
     public class Material

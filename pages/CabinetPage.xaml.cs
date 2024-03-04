@@ -20,6 +20,7 @@ namespace PrintHouse.pages
     /// </summary>
     public partial class CabinetPage : Page
     {
+        //TODO: Изменение данных в личном кабинете.
         public CabinetPage()
         {
             InitializeComponent();

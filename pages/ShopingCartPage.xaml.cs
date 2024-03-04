@@ -34,5 +34,14 @@ namespace PrintHouse.pages
             //ShopingCart.serviceList.Remove(item);
         }
 
+        private void CreateOrder_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO Сделать оформление заказа, процедуру заказа
+            StrangeDB db = new StrangeDB();
+            foreach (var service in ShopingCart.serviceList)
+            {
+                db.Select($"insert into order(count, idClient, idService) values({service.Count}, )"); 
+            }
+        }
     }
 }
