@@ -5,6 +5,8 @@ VisualStudioVersion = 17.2.32516.85
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintHouse", "PrintHouse.csproj", "{9602D43F-4046-4B77-95A5-E58D3B5E6C82}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupProgram", "..\SetupProgram\SetupProgram.vdproj", "{52934246-6085-469D-A2ED-7CA827905C7B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{9602D43F-4046-4B77-95A5-E58D3B5E6C82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9602D43F-4046-4B77-95A5-E58D3B5E6C82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9602D43F-4046-4B77-95A5-E58D3B5E6C82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52934246-6085-469D-A2ED-7CA827905C7B}.Debug|Any CPU.ActiveCfg = Debug
+		{52934246-6085-469D-A2ED-7CA827905C7B}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PrintHouse.src;
+using MySqlConnector;
 
 namespace PrintHouse.pages
 {
@@ -30,17 +31,22 @@ namespace PrintHouse.pages
         private void RemoveItemOnCart_Click(object sender, RoutedEventArgs e)
         {
             ServiceCart item = (ServiceCart)ServiceList.SelectedItem;
-            MessageBox.Show(item.Price.ToString());
-            //ShopingCart.serviceList.Remove(item);
+            ShopingCart.serviceList.Remove(item);
         }
 
         private void CreateOrder_Click(object sender, RoutedEventArgs e)
         {
-            //TODO Сделать оформление заказа, процедуру заказа
+            if(AuthProvider.personalData == null)
+            {
+                MessageBox.Show("Для начала авторизируйтесь в системе");
+                return;
+            }
+
             StrangeDB db = new StrangeDB();
+
             foreach (var service in ShopingCart.serviceList)
             {
-                db.Select($"insert into order(count, idClient, idService) values({service.Count}, )"); 
+                db.Insert($"call CreateOrder({service.Count}, {AuthProvider.personalData.Id}, {service.Data.Id})");
             }
         }
     }

@@ -11,8 +11,8 @@ namespace PrintHouse.src
 {
     internal static class AuthProvider
     {
+        //todo: Валидация данных
         public static PersonalData personalData = null;
-        //TODO: Если что-то с админом не так, то смотреть на строку ниже
         public static bool IsAdmin => personalData?.IsAdmin ?? false;
         public static bool TryAuth(string login, string password)
         {
@@ -22,16 +22,15 @@ namespace PrintHouse.src
 
             var reader = db.Select($"select isAdmin, idProfile from authData where login = '{login}' and password = '{hashPassword}'");
             
-
             //todo: Заполнение данных
             if (reader.Read())
             {
                 personalData = new PersonalData()
                 {
-                    IsAdmin = (bool)reader[0]
+                    IsAdmin = (bool)reader[0],
+                    Id = (int)reader[1]
                 };
                 reader.DisposeAsync();
-                MessageBox.Show($"Всё ок,{reader[1]}");
                 return true;
             }
             else

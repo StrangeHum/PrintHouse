@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace PrintHouse.pages
 {
     /// <summary>
-    /// Логика взаимодействия для CreateOrder.xaml
+    /// Логика взаимодействия для CreateServicePage.xaml
     /// </summary>
-    public partial class CreateOrder : Page
+    public partial class CreateServicePage : Page
     {
-        public CreateOrder()
+        public CreateServicePage()
         {
             InitializeComponent();
         }

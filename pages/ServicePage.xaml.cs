@@ -30,13 +30,14 @@ namespace PrintHouse.pages
             ServiceDatas = new ObservableCollection<ServiceData>();
 
             InitializeComponent();
-
+            if (!AuthProvider.IsAdmin)
+            {
+                CreateServiceButton.Visibility = Visibility.Hidden;
+            }
             
             ServiceList.ItemsSource = ServiceDatas;
             UpdateServiceList();
         }
-
-        
 
         public void UpdateServiceList()
         {
@@ -95,10 +96,16 @@ namespace PrintHouse.pages
             ShopingCart.serviceList.Add(new ServiceCart(item, 1));
         }
 
+
         private void SearchBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             if (!Char.IsLetterOrDigit(e.Text, 0))
                 e.Handled = true;
+        }
+
+        private void CreateServiceButton_Click(object sender, RoutedEventArgs e)
+        {
+            PageProvider.SetPageToFrame(new CreateServicePage());
         }
     }
 }

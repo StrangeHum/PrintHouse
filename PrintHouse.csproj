@@ -84,6 +84,9 @@
     <Compile Include="pages\CabinetPage.xaml.cs">
       <DependentUpon>CabinetPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="pages\CreateServicePage.xaml.cs">
+      <DependentUpon>CreateServicePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="pages\ShopingCartPage.xaml.cs">
       <DependentUpon>ShopingCartPage.xaml</DependentUpon>
     </Compile>
@@ -121,7 +124,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="pages\CreateOrder.xaml">
+    <Page Include="pages\CreateServicePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -163,9 +166,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="pages\CreateOrder.xaml.cs">
-      <DependentUpon>CreateOrder.xaml</DependentUpon>
-    </Compile>
     <Compile Include="pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>

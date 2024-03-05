@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PrintHouse.pages;
+using System;
 using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,5 +21,9 @@ public static class PageProvider
     public static void SetPageToFrame(string page)
     {
         frame.NavigationService.Navigate(new Uri($"./pages/{page}.xaml", UriKind.Relative));
+    }
+    public static void SetPageToFrame(Page page)
+    {
+        frame.NavigationService.Navigate(page, UriKind.Relative);
     }
 }

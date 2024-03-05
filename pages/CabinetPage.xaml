@@ -10,5 +10,7 @@
 
     <Grid>
         <Label>Личный кабинет</Label>
+        <TextBlock Text="{Binding ElementName=PersonalData, Path=FirstName}"></TextBlock>
+        <TextBlock Text="{Binding ElementName=PersonalData, Path=SecondName}"></TextBlock>
     </Grid>
 </Page>

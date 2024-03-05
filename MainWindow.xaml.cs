@@ -10,32 +10,18 @@ namespace PrintHouse
     /// </summary>
     public partial class MainWindow : Window
     {
-        StrangeDB db;
         public MainWindow()
         {
-            db = new StrangeDB();
             InitializeComponent();
-            //InitDB();
+
             PageProvider.Init(frame);
             ShopingCart.Init();
             PageProvider.SetPageToFrame("ServicePage");
 
         }
 
-
-        private void InitDB()
-        {
-            var data = db.Select();
-            if (data.Read())
-            {
-                //LabelFoo.Content = $"{data[0]}, {data[1]}, {data[2]}, {data[3]}";
-                data.DisposeAsync();
-            }
-        }
-
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
-            //frame.NavigationService.Navigate(new Uri("./pages/LoginPage.xaml", UriKind.Relative));
             PageProvider.SetPageToFrame("LoginPage");
         }
 
@@ -46,6 +32,11 @@ namespace PrintHouse
 
         private void ButtonCabinet_Click(object sender, RoutedEventArgs e)
         {
+            if (AuthProvider.personalData == null)
+            {
+                MessageBox.Show("Для начала авторизируйтесь в системе");
+                return;
+            }
             PageProvider.SetPageToFrame("CabinetPage");
         }
 

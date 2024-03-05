@@ -16,12 +16,11 @@ namespace PrintHouse.src
         public static void Init()
         {
             serviceList = new ObservableCollection<ServiceCart>();
-            
         }
     }
     internal class ServiceCart
     {
-        public ServiceData data { get; set; }
+        public ServiceData Data { get; set; }
         public int _count; 
         private float _price;
 
@@ -29,15 +28,15 @@ namespace PrintHouse.src
             get { return _count; } 
             set {
                 _count = value;
-                _price = data.price * _count;
+                _price = Data.price * _count;
             } 
         }
-        public string Title => data.title;
+        public string Title => Data.title;
         public float Price => _price;
 
         public ServiceCart(ServiceData data, int count)
         {
-            this.data = data;
+            this.Data = data;
             this.Count = count;
         }
 

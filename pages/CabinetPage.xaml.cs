@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PrintHouse.src;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,10 +21,15 @@ namespace PrintHouse.pages
     /// </summary>
     public partial class CabinetPage : Page
     {
-        //TODO: Изменение данных в личном кабинете.
+        StrangeDB db;
+
         public CabinetPage()
         {
+            db = new StrangeDB();
+
             InitializeComponent();
+            PersonalData = AuthProvider.personalData;
         }
+        public PersonalData PersonalData {  get; set; }
     }
 }
